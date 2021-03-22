@@ -16,11 +16,27 @@ app.use((err, req, res, next) => {
     }
 })
 
-app.get('/list', async (req, res, next) => {
+app.get('/list/:status/:page', async (req, res, next) => {
     try {
-        let tasks = await models.tasks.findAll();
+        let{status,page} = req.params;
+        // status[1:finished | 0:to-do | -1:ALL]
+        let conditions = {};
+        if(status != -1){
+            conditions.isFinished = status;
+        }
+        if(page<=0){
+            page = 1;
+        }
+        let limit = 10;
+        let offset = (page-1)*10;
+        let tasks = await models.tasks.findAndCountAll({
+            where:conditions,
+            limit:limit,
+            offset:offset
+        });
         res.json({
-            list: tasks
+            message:"Listing succeed",
+            tasks
         });
     } catch(error) {
         next(error);
