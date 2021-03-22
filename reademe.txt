@@ -1,0 +1,8 @@
+Requirements:
+
+    API:
+        1. Using different arguments(status/page#) to query the to-do tasks from database.  (READ)
+        2. Adding to-do tasks into database with(Name/Deadline/Content/Status)              (CREATE)
+        3. Editing the to-do tasks. (ID/Name/Deadline/Content)                              (UPDATE)
+        4. Deleting a task.(ID)                                                             (DELETE)
+        5. Changing a task's status (ID/Status)                                             (UPDATE)

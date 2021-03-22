@@ -2,21 +2,21 @@
   "development": {
     "username": "root",
     "password": "950413",
-    "database": "express_demo",
+    "database": "tododemo",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": "950413",
+    "database": "tododemo",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
+    "password": "950413",
+    "database": "tododemo",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
